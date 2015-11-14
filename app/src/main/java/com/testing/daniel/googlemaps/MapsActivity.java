@@ -1,6 +1,7 @@
 package com.testing.daniel.googlemaps;
 
 import android.app.DialogFragment;
+import android.content.Intent;
 import android.location.Location;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -10,6 +11,7 @@ import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -134,6 +136,13 @@ public class MapsActivity extends ActionBarActivity implements ConnectionCallbac
         addMenuDialog.show(getFragmentManager(), "Add Stop Menu");
     }
 
+    /*
+    public void viewStops(View view)
+    {
+        Intent intent = new Intent(this, ViewStopsActivity.class);
+        startActivity(intent);
+    }*/
+
     @Override
     protected void onResume()
     {
@@ -142,6 +151,7 @@ public class MapsActivity extends ActionBarActivity implements ConnectionCallbac
             startLocationUpdates();
     }
 
+    //Testing
     @Override
     protected void onPause()
     {

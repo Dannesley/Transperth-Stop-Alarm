@@ -9,7 +9,7 @@
 
     <!-- Used to access tower/wi-fi level locations *approx* one "block" -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <!-- Used to access GPS level locations-->
+    <!-- Used to access GPS level locations -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
@@ -33,6 +33,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>

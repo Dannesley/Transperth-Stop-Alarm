@@ -11,4 +11,7 @@
     <string name="add_stop_dialog_closest">At your current location</string>
     <string name="add_stop_dialog_number">By stop number</string>
     <string name="add_stop_dialog_edit_number">Stop number e.g. 130169</string>
+    <string name="title_activity_view_stops">ViewStopsActivity</string>
+
+    <string name="hello_world">Hello world!</string>
 </resources>
