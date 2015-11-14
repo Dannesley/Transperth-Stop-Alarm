@@ -33,7 +33,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <activity
+            android:name=".ViewStopsListActivity"
+            android:label="@string/title_activity_view_stops_list"
+            android:parentActivityName=".MapsActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.testing.daniel.googlemaps.MapsActivity" />
+        </activity>
     </application>
 
 </manifest>

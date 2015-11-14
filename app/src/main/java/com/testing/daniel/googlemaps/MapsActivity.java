@@ -39,6 +39,7 @@ import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -119,7 +120,8 @@ public class MapsActivity extends ActionBarActivity implements ConnectionCallbac
         }
         else if(action == R.id.action_list)
         {
-            Log.d(TAG, "List action pressed");
+            Log.d(TAG, "View Stops action pressed");
+            viewBusStopsList();
         }
         else if(action == R.id.action_settings)
         {
@@ -134,6 +136,22 @@ public class MapsActivity extends ActionBarActivity implements ConnectionCallbac
         //Create the add bus stop menu dialog
         DialogFragment addMenuDialog = new AddStopMenuDialogFragment();
         addMenuDialog.show(getFragmentManager(), "Add Stop Menu");
+    }
+
+    private void viewBusStopsList()
+    {
+        //Show the list of stops in a new activity via an intent
+        Intent intent = new Intent(this, ViewStopsListActivity.class)
+                        .addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+
+        //Populate the intent with data to deliver! Nice package.
+        if(!busStops.isEmpty())
+        {
+            ArrayList<Stop> stopList = new ArrayList<Stop>(busStops.values());
+            intent.putParcelableArrayListExtra("k", stopList);
+        }
+
+        startActivity(intent);
     }
 
     /*
@@ -282,6 +300,7 @@ public class MapsActivity extends ActionBarActivity implements ConnectionCallbac
     @Override
     public void onMapReady(GoogleMap map)
     {
+        Log.d(TAG, "map ready!");
         //The location for Perth, Western Australia, Australia
         LatLng startLocation = new LatLng(-31.952, 115.859);
 
