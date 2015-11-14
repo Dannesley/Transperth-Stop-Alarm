@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:gravity="center"
+        android:textSize="30sp"
+        android:fontFamily="sans-serif"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:background="@color/dialog_header"
+        android:text="@string/action_add"
+        android:contentDescription="@string/app_name" />
+    <RadioGroup
+        android:id="@+id/radio_add_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <RadioButton
+            android:id="@+id/radio_add_closest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="4dp"
+            android:checked="true"
+            android:text="@string/add_stop_dialog_closest"/>
+        <RadioButton
+            android:id="@+id/radio_add_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="4dp"
+            android:text="@string/add_stop_dialog_number"/>
+    </RadioGroup>
+    <EditText
+        android:id="@+id/edit_stop_number"
+        android:inputType="numberSigned"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginLeft="22dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="sans-serif"
+        android:enabled="false"
+        android:hint="@string/add_stop_dialog_edit_number"/>
+</LinearLayout>
