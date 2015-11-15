@@ -11,11 +11,14 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 
 public class ViewStopsListActivity extends ActionBarActivity
 {
     private ArrayList<Stop> stops;
+    protected static final String TAG = "View-Stops-Activity"; //Debug log prepend
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,20 +37,20 @@ public class ViewStopsListActivity extends ActionBarActivity
             stops = getIntent().getParcelableArrayListExtra("k");
             for (Stop s : stops)
             {
-                Log.d("View-Stops", s.getStopName() + " " + s.getStopNum());
+                Log.d(TAG, s.getStopName() + " " + s.getStopNum());
             }
         }
     }
 
     private void populateListView()
     {
-        ListView listView = (ListView) findViewById(R.id.stopListView);
-        ArrayAdapter<Stop> arrayAdapter = new ArrayAdapter<Stop>(
-                this,
-                android.R.layout.simple_list_item_1,
-                stops);
-
-        listView.setAdapter(arrayAdapter);
+        if(stops !=null)
+        {
+            ListView listView = (ListView) findViewById(R.id.stopListView);
+            //***********SORT ME NUMERICALLY :) ************//
+            StopAdapter stopAdapter = new StopAdapter(this, R.layout.row, stops);
+            listView.setAdapter(stopAdapter);
+        }
     }
 
     @Override
